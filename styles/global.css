@@ -9,12 +9,11 @@
   --color-accent: #f97316;
   --color-background: #ffffff;
   --color-text: #0f172a;
-  --color-highlight: #ff6b6b;
-
+  --color-text-light: #64748b;
+  --color-text-on-primary: #ffffff;
   --color-accent: #f97316; /* Orange */
   --color-success: #059669; /* Green */
   --color-warning: #dc2626; /* Red */
-  --color-text-light: #64748b;
 }
 
 body {
