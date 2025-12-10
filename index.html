@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>QuizApp</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__title">CyberCheck</h1>
+    </header>
+
+    <main class="main-content">
+      <section class="quiz">
+        <article class="quiz__card">
+          <button
+            class="quiz__card-bookmark"
+            aria-label="Bookmark this question"
+          >
+            <img src="assets/icons/bookmark.svg" alt="" />
+          </button>
+          <header class="quiz__card-header">
+            <h2 class="quiz__card-title">Question</h2>
+            <div class="quiz__card-tags">
+              <span class="quiz__card-tag">#accessibility</span>
+              <span class="quiz__card-tag">#beginner</span>
+            </div>
+          </header>
+
+          <p class="quiz__card-question">
+            Which element improves website accessibility the most?
+          </p>
+          <label class="quiz__option">
+            <input type="radio" name="question1" />Alternative texts for
+            images</label
+          >
+          <label class="quiz__option">
+            <input type="radio" name="question1" />Colorful backgrounds</label
+          >
+          <label class="quiz__option">
+            <input type="radio" name="question1" />Complex animations</label
+          >
+          <button class="quiz__card-submit">Show Answer</button>
+          <p class="quiz__card-answer" hidden>
+            ✅ The correct answer is: Alternative texts for images
+          </p>
+        </article>
+        <article class="quiz__card">
+          <button
+            class="quiz__card-bookmark"
+            aria-label="Bookmark this question"
+          >
+            <img src="assets/icons/bookmark.svg" alt="" />
+          </button>
+          <header class="quiz__card-header">
+            <h2 class="quiz__card-title">Question</h2>
+            <div class="quiz__card-tags">
+              <span class="quiz__card-tag">#accessibility</span>
+              <span class="quiz__card-tag">#beginner</span>
+            </div>
+          </header>
+
+          <p class="quiz__card-question">
+            What does “Keyboard-Only Navigation” mean?
+          </p>
+          <label class="quiz__option">
+            <input type="radio" name="question2 checked" />All users must use a
+            mouse</label
+          >
+          <label class="quiz__option">
+            <input type="radio" name="question2" />All functions of the website
+            are also accessible using only the keyboard</label
+          >
+          <label class="quiz__option">
+            <input type="radio" name="question2" />Keyboard shortcuts for
+            admins</label
+          >
+          <button class="quiz__card-submit">Show Answer</button>
+          <p class="quiz__card-answer">
+            ✅ The correct answer is: All functions of the website are also
+            accessible using only the keyboard
+          </p>
+        </article>
+      </section>
+    </main>
+    <footer class="footer">
+      <nav class="footer__nav">
+        <a
+          class="footer__link footer__link--active"
+          href="index.html"
+          aria-label="Home"
+        >
+          <img src="assets/icons/home.svg" alt="" />
+        </a>
+        <a class="footer__link" href="bookmarks.html" aria-label="Bookmarks">
+          <img src="assets/icons/bookmark.svg" alt="" />
+        </a>
+        <a class="footer__link" href="profile.html" aria-label="Profile">
+          <img src="assets/icons/user.svg" alt="" />
+        </a>
+      </nav>
+    </footer>
+  </body>
+</html>
