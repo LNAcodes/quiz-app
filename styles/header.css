@@ -1,0 +1,14 @@
+header {
+  height: 80px;
+  text-align: center;
+  background-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+  position: sticky;
+  top: 0;
+  height: 80px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 100px;
+  z-index: 1;
+}
