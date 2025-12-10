@@ -6,12 +6,41 @@
   height: 60px;
   width: 100%;
   background-color: var(--color-primary);
-  z-index: 1;
+  z-index: 100;
 }
 
 .footer__nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 0.5rem 0;
+  height: 100%;
+  padding: 0.5rem 1rem;
+}
+
+.footer__link:hover {
+  opacity: 0.7;
+}
+
+.footer__link--active {
+  border-bottom: 3px solid var(--color-accent);
+}
+
+.footer__link img {
+  width: 32px;
+  height: 32px;
+  filter: brightness(0) invert(1);
+}
+
+@media (min-width: 600px) {
+  .footer__link img {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .footer__link img {
+    width: 40px;
+    height: 40px;
+  }
 }
