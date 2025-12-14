@@ -19,6 +19,17 @@ The project is being actively extended with JavaScript functionality and backend
 - `.gitignore` - Files to ignore in version control
 - `README.md` - Project description
 
+## Phase 1 – Layout & Accessibility (baseline)
+- Semantic HTML
+- Responsive design
+- Accessibility-first structure
+
+## Phase 2 – JavaScript & Data Logic (in progress)
+- Quiz logic in JavaScript
+- Local state management
+- Bookmark functionality
+- Preparing backend data model
+
 ## Goals
 - Build a clean HTML structure
 - ✅ Use CSS BEM conventions
