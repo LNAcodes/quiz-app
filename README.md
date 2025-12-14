@@ -21,8 +21,8 @@ The project is being actively extended with JavaScript functionality and backend
 
 ## Goals
 - Build a clean HTML structure
-✅ Use CSS BEM conventions
-✅ Create a responsive layout
+- ✅ Use CSS BEM conventions
+- ✅ Create a responsive layout
 - Keep accessibility in mind
 
 ## Next Steps (Planned)
