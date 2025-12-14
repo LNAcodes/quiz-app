@@ -1,8 +1,10 @@
-# Quiz App - Recap Project 1
+# CyberCheck - Quiz App (Recap Project 1)
 
 ## Description
-This is the layout version of a Quiz App created as part of the Web Bootcamp.
-The quiz focuses on **Accessibility** and **Intersectional Cybersecurity**.
+This is the initial layout version of *Cybercheck*, a quiz app created as part of the Web Bootcamp.
+The quiz focuses on Accessibility and Intersectional Cybersecurity.
+
+The project is being actively extended with JavaScript functionality and backend planning.
 
 ## Technologies
 - HTML
@@ -19,7 +21,11 @@ The quiz focuses on **Accessibility** and **Intersectional Cybersecurity**.
 
 ## Goals
 - Build a clean HTML structure
-- Use CSS BEM conventions
-- Create a responsive layout
+✅ Use CSS BEM conventions
+✅ Create a responsive layout
 - Keep accessibility in mind
 
+## Next Steps (Planned)
+- Add JavaScript functionality for quiz logic
+- Implement question filtering and bookmarks
+- Prepare data structures for future backend integration
