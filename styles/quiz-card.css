@@ -1,20 +1,25 @@
+/* QUIZ CARD BASIC STRUCTURE */
+
 .quiz__card {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  flex-direction: column; /* content of cards up to down */
+  gap: 1rem; /* space between elements */
   margin: 1rem;
-  padding: 1rem;
+  padding: 3rem 1rem 1rem; /* space for bookmark */
   border-radius: 12px;
   background-color: var(--color-card-bg);
-  position: relative;
+  position: relative; /* important for absolute position of the bookmark */
 }
 
+/* BOOKMARK BUTTON */
+
 .quiz__card-bookmark {
-  position: absolute;
+  position: absolute; /* above card content*/
   top: 0.5rem;
   right: 0.5rem;
   width: 24px;
   height: 24px;
+  z-index: 2; /* making sure it lays above all other elements within the card */
 }
 
 .quiz__card-bookmark img {
@@ -29,60 +34,53 @@
   opacity: 1;
 }
 
-.quiz__card-header {
-  margin-bottom: 0.5rem;
-}
+/* FIELDSET OPTIONS */
 
-.quiz__card-title {
-  visibility: hidden;
-  font-size: medium;
-  color: var(--color-primary);
-  margin: ;
-}
-
-.quiz__card-tags {
+.quiz__card-options {
+  border: none; /* deletes default fieldset border */
+  padding: 1rem 0 0 0; /* spacing legend to top border */
+  margin: 0;
   display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
+  flex-direction: column; /* one option below the other */
+  gap: 0.75rem; /* spacing between the labels */
 }
 
-.quiz__card-tag {
-  display: inline-block;
-  padding: 0.25rem 0.75rem;
-  background-color: var(--color-option-bg);
-  color: var(--color-text-light);
-  border-radius: 12px;
-  font-size: 0.75rem;
-}
+/* LEGEND / QUESTION */
 
 .quiz__card-question {
   text-align: center;
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--color-primary);
-  margin-top: 2rem;
+  margin-top: 0; /* padding of card is already set */
 }
 
-.quiz__option {
-  display: block;
+/* LABEL / RADIO BUTTONS */
+
+.quiz__card-option {
+  display: flex; /* Radio + Text next to each other */
+  align-items: center;
+  gap: 0.75rem; /* Spacing between Radio and Text */
   padding: 0.75rem 1rem;
   background-color: var(--color-option-bg);
   border-radius: 8px;
+  cursor: pointer;
 }
 
-.quiz__option:hover {
+.quiz__option input[type="radio"] {
+  margin: 0.5rem; /* full control over margins, no default settings */
+}
+
+.quiz__card-option:hover {
   background-color: #e5e7eb;
   border-color: var(--color-primary);
 }
 
-.quiz__option input[type="radio"] {
-  margin: 0.5rem;
-}
+/* SHOW ANSWER BUTTON */
 
 .quiz__card-submit {
   background-color: var(--color-accent);
-  color: white;
+  color: var(--color-text-on-primary);
   border: none;
   border-radius: 8px;
   padding: 0.75rem 1.5rem;
@@ -91,15 +89,16 @@
   cursor: pointer;
 }
 
+.quiz__card-submit:hover {
+  opacity: 0.9;
+}
+
+/* ANSWER TEXT */
 .quiz__card-answer {
   padding: 1rem;
   margin-top: 1rem;
   background-color: #d1fae5;
   border-radius: 8px;
-}
-
-.quiz__card-submit:hover {
-  opacity: 0.9;
 }
 
 .quiz__card-answer[hidden] {
@@ -109,6 +108,23 @@
   border-color: var(--color-warning);
 }
 
+/* TAGS / LABELS */
+.quiz__card-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.quiz__card-tag {
+  padding: 0.25rem 0.75rem;
+  background-color: var(--color-option-bg);
+  color: var(--color-text-light);
+  border-radius: 12px;
+  font-size: 0.75rem;
+}
+
+/* QUIZ GRID / LAYOUT */
 .quiz {
   display: grid;
   grid-template-columns: 1fr;
