@@ -66,6 +66,67 @@
   margin-bottom: 1rem;
 }
 
+/* Answer options styling */
+.answer-options {
+  border: 1px solid var(--color-option-border);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.answer-optionslegend {
+  font-weight: 600;
+  color: var(--color-primary);
+  padding: 0 0.5rem;
+}
+
+.answer-option {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: var(--color-bg);
+  border-radius: 8px;
+}
+
+.answer-option:last-child {
+  margin-bottom: 0; /* last element without margin at the bottom */
+}
+
+.answer-option__header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.answer-option__header input[type="radio"] {
+  width: 1.2rem;
+  height: 1.2rem;
+  cursor: pointer;
+}
+
+.answer-option__header label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 0; /* overwriting label styling from above*/
+}
+
+.answer-option textarea {
+  width: 100%;
+  min-height: 60px; /* kleiner als die Question */
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-option-border);
+  font-family: inherit;
+  font-size: 1rem;
+  resize: vertical; /* User kann Höhe ändern */
+}
+
+.answer-option textarea:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
 /* Responsive design */
 @media (min-width: 600px) {
   .form-section {
