@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>QuizApp</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles/form.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__title">CyberCheck</h1>
+    </header>
+
+    <main class="main-content">
+      <section class="form-section">
+        <h2>Submit a new question</h2>
+        <form class="new-question-form">
+          <label for="question">Question</label>
+          <textarea id="question" name="question" required></textarea>
+          <label for="answer">Answer</label>
+          <textarea id="answer" name="answer" required></textarea>
+          <label for="tags">Tag</label>
+          <input
+            type="text"
+            id="tags"
+            name="tags"
+            placeholder="Fill your tag in"
+          />
+          <button type="submit">Submit Question</button>
+        </form>
+      </section>
+    </main>
+    <footer class="footer">
+      <nav class="footer__nav">
+        <a class="footer__link" href="./index.html" aria-label="Home">
+          <img src="./assets/icons/home.svg" alt="" />
+        </a>
+        <a class="footer__link" href="./bookmarks.html" aria-label="Bookmarks">
+          <img src="./assets/icons/bookmark.svg" alt="" />
+        </a>
+        <a
+          class="footer__link footer__link--active"
+          href="./form.html"
+          aria-label="Add question"
+        >
+          <img src="./assets/icons/circle-plus.svg" alt="" />
+        </a>
+        <a class="footer__link" href="./profile.html" aria-label="Profile">
+          <img src="./assets/icons/user.svg" alt="" />
+        </a>
+      </nav>
+    </footer>
+  </body>
+</html>
