@@ -24,11 +24,91 @@
           <p class="char-count" aria-live="polite" id="question-count">
             150 characters left
           </p>
+          <!-- task fulfilled for bootcamp
           <label for="answer">Answer</label>
           <textarea id="answer" name="answer" required></textarea>
           <p class="char-count" aria-live="polite" id="answer-count">
             150 characters left
           </p>
+          -->
+
+          <!-- adjusting submit question answer field to multiple choice: -->
+          <fieldset class="answer-options" aria-describedby="options-hint">
+            <legend>Answer Options</legend>
+            <p id="options-hint" class="visually-hidden">
+              Enter three answer options and mark one as the correct answer
+              using the radio buttons
+            </p>
+
+            <!-- Option 1 -->
+            <div class="answer-option">
+              <div class="answer-option__header">
+                <input
+                  type="radio"
+                  id="correct-1"
+                  name="correct-answer"
+                  value="1"
+                  required
+                />
+                <label for="correct-1">Mark as correct answer</label>
+              </div>
+              <textarea
+                name="option-1"
+                id="option-1"
+                placeholder="Answer option 1"
+                maxlength="150"
+                required
+              ></textarea>
+              <p class="char-count" aria-live="polite" id="count-1">
+                150 characters left
+              </p>
+            </div>
+            <!-- Option 2 -->
+            <div class="answer-option">
+              <div class="answer-option__header">
+                <input
+                  type="radio"
+                  id="correct-2"
+                  name="correct-answer"
+                  value="2"
+                />
+                <label for="correct-2">Mark as correct answer</label>
+              </div>
+              <textarea
+                name="option-2"
+                id="option-2"
+                placeholder="Answer option 2"
+                maxlength="150"
+                required
+              ></textarea>
+              <p class="char-count" aria-live="polite" id="count-2">
+                150 characters left
+              </p>
+            </div>
+
+            <!-- Option 3 -->
+            <div class="answer-option">
+              <div class="answer-option__header">
+                <input
+                  type="radio"
+                  id="correct-3"
+                  name="correct-answer"
+                  value="3"
+                />
+                <label for="correct-3">Mark as correct answer</label>
+              </div>
+              <textarea
+                name="option-3"
+                id="option-3"
+                placeholder="Answer option 3"
+                maxlength="150"
+                required
+              ></textarea>
+              <p class="char-count" aria-live="polite" id="count-3">
+                150 characters left
+              </p>
+            </div>
+          </fieldset>
           <label for="tags">Tag</label>
           <input
             type="text"
