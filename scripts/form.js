@@ -74,3 +74,136 @@ answerField.addEventListener("input", () =>
 updateCharCount(questionField, questionCount);
 updateCharCount(answerField, answerCount);
 */
+
+console.log("All character counters initialized!");
+
+// ==== create a new card ====
+
+// choose form element
+const form = document.querySelector(".new-question-form");
+
+// add Submit Event Listener
+form.addEventListener("submit", (event) => {
+  // prevent page will load
+  event.preventDefault();
+
+  console.log("Form submitted!"); // testing if successful
+
+  // read data from form
+
+  const questionText = questionField.value;
+  const option1Text = option1Field.value;
+  const option2Text = option2Field.value;
+  const option3Text = option3Field.value;
+  const tagText = document.getElementById("tags").value;
+
+  // which answer is the correct one?
+  const correctAnswer = document.querySelector(
+    'input[name="correct-answer"]:checked'
+  ).value;
+
+  console.log("Question:", questionText); //test if it works
+  console.log("Correct answer is option:", correctAnswer); // test if it works
+
+  // creating new card
+  const newCard = document.createElement("article");
+  newCard.className = "quiz__card";
+
+  // create bookmark button
+  const bookmarkButton = document.createElement("button");
+  bookmarkButton.className = "quiz__card-bookmark";
+  bookmarkButton.setAttribute("aria-label", "Bookmark");
+
+  const bookmarkImg = document.createElement("img");
+  bookmarkImg.src = "./assets/icons/bookmark.svg";
+  bookmarkImg.alt = "";
+
+  bookmarkButton.appendChild(bookmarkImg);
+
+  // create question
+  const fieldset = document.createElement("fieldset");
+  fieldset.className = "quiz__card-options";
+
+  const legend = document.createElement("legend");
+  legend.className = "quiz__card-question";
+  legend.textContent = questionText;
+
+  fieldset.appendChild(legend);
+
+  // create answer options
+  // option 1
+  const label1 = document.createElement("label");
+  label1.className = "quiz__card-option";
+
+  const radio1 = document.createElement("input");
+  radio1.type = "radio";
+  radio1.name = "question-new";
+  radio1.value = "1";
+
+  label1.appendChild(radio1);
+  label1.appendChild(document.createTextNode(option1Text));
+  fieldset.appendChild(label1);
+
+  // option 2
+  const label2 = document.createElement("label");
+  label2.className = "quiz__card-option";
+
+  const radio2 = document.createElement("input");
+  radio2.type = "radio";
+  radio2.name = "question-new";
+  radio2.value = "2";
+
+  label2.appendChild(radio2);
+  label2.appendChild(document.createTextNode(option2Text));
+  fieldset.appendChild(label2);
+
+  // option 3
+  const label3 = document.createElement("label");
+  label3.className = "quiz__card-option";
+
+  const radio3 = document.createElement("input");
+  radio3.type = "radio";
+  radio3.name = "question-new";
+  radio3.value = "3";
+
+  label3.appendChild(radio3);
+  label3.appendChild(document.createTextNode(option3Text));
+  fieldset.appendChild(label3);
+
+  // create show answer button
+  const showAnswerButton = document.createElement("button");
+  showAnswerButton.className = "quiz__card-submit";
+  showAnswerButton.textContent = "Show Answer";
+
+  // create tag
+  const tagList = document.createElement("ul");
+  tagList.className = "quiz__card-tags";
+
+  if (tagText) {
+    const tagItem = document.createElement("li");
+    tagItem.className = "quiz__card-tag";
+    tagItem.textContent = tagText;
+    tagList.appendChild(tagItem);
+  }
+
+  // build everything together
+  newCard.appendChild(bookmarkButton);
+  newCard.appendChild(fieldset);
+  newCard.appendChild(showAnswerButton);
+  newCard.appendChild(tagList);
+
+  // show card on page after submitting
+  const formSection = document.querySelector(".form-section");
+  formSection.insertAdjacentElement("afterend", newCard);
+
+  console.log("Card created!"); // test if successful
+
+  // set form back
+  form.reset();
+
+  // set character counter back
+  updateCharCount(questionField, questionCount);
+  updateCharCount(option1Field, option1Count);
+  updateCharCount(option2Field, option2Count);
+  updateCharCount(option3Field, option3Count);
+});
