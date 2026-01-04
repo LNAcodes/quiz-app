@@ -21,8 +21,14 @@
         <form class="new-question-form">
           <label for="question">Question</label>
           <textarea id="question" name="question" required></textarea>
+          <p class="char-count" aria-live="polite" id="question-count">
+            150 characters left
+          </p>
           <label for="answer">Answer</label>
           <textarea id="answer" name="answer" required></textarea>
+          <p class="char-count" aria-live="polite" id="answer-count">
+            150 characters left
+          </p>
           <label for="tags">Tag</label>
           <input
             type="text"
@@ -54,5 +60,6 @@
         </a>
       </nav>
     </footer>
+    <script src="./scripts/form.js" defer></script>
   </body>
 </html>
