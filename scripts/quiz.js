@@ -2,12 +2,12 @@ console.log("Quiz JS loaded successfully!");
 
 // Get colors from css root
 
-const rootStyles = getComputedStyle(document.documentElement);
+const rootStyles = getComputedStyle(document.documentElement); //get all css-styles used for this element, if color is changed in css automatically changed in js as well
 const successColor = rootStyles.getPropertyValue("--color-success");
 const warningColor = rootStyles.getPropertyValue("--color-warning");
 const neutralColor = rootStyles.getPropertyValue("--color-option-bg");
 
-// select Show-Answer-Buttons
+// select all Show-Answer-Buttons
 const showAnswerButtons = document.querySelectorAll(".quiz__card-submit");
 
 /*
@@ -27,29 +27,40 @@ showAnswerButtons.forEach((button) => {
     const answer = card.querySelector(".quiz__card-answer");
     const options = card.querySelectorAll(".quiz__card-option input");
 
+    // toggle logic
     if (answer.hasAttribute("hidden")) {
-      answer.removeAttribute("hidden");
-      button.textContent = "Hide Answer";
-      /*
+      answer.removeAttribute("hidden"); // show answer
+      button.textContent = "Hide Answer"; // button becomes hide
+    } else {
+      // Hide answer
+      answer.setAttribute("hidden", "");
+      button.textContent = "Show Answer";
+    }
+  });
+});
+/*
     } else {
       answer.setAttribute("hidden", "");
       button.textContent = "Show Answer";
     }
   }); */
-      // show backgroundcolor for options
+/*
+  // show backgroundcolor for options
       options.forEach((input, index) => {
         input.parentElement.style.backgroundColor = neutralColor; //reset
 
         if (index === 0 && input.checked) {
-          input.parentElement.style.backgroundColor = successColor; // green
+          input.parentElement.style.backgroundColor = successColor; // first option chosen and checked = green
         } else if (index !== 0 && input.checked) {
-          input.parentElement.style.backgroundColor = warningColor; // red
+          input.parentElement.style.backgroundColor = warningColor; // not first option and checked = red
         }
       });
+      /*
     } else {
       answer.setAttribute("hidden", "");
       button.textContent = "Show Answer";
-
+      */
+/*
       // reset colors
       options.forEach((input) => {
         input.parentElement.style.backgroundColor = neutralColor;

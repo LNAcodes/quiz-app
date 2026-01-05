@@ -1,17 +1,34 @@
 console.log("Forms JS loaded successfully!");
 
-// function to updated character count
+// function to update character count
 function updateCharCount(textareaElement, counterElement) {
-  const remaining = 150 - textareaElement.value.length;
+  const remaining = 150 - textareaElement.value.length; // value.length = calculation of character count
   counterElement.textContent = remaining + " characters left"; // error safe code
 }
+/* alternativ but too much code
+const remaining1 = 150 - questionField.value.length;
+questionCount.textContent = remaining1 + " characters left";
+
+// for Option 1
+const remaining2 = 150 - option1Field.value.length;
+option1Count.textContent = remaining2 + " characters left";
+
+// for Option 2
+const remaining3 = 150 - option2Field.value.length;
+option2Count.textContent = remaining3 + " characters left";
+
+// for Option 3
+const remaining4 = 150 - option3Field.value.length;
+option3Count.textContent = remaining4 + " characters left";
+*/
 
 // character counter for question
-const questionField = document.getElementById("question");
+const questionField = document.getElementById("question"); //get HTML element
 const questionCount = document.getElementById("question-count");
 questionField.addEventListener("input", () =>
   updateCharCount(questionField, questionCount)
 );
+/* Hey questionField, everytime a user types something, please do an updateCharCount() */
 
 // Initial update on page load
 updateCharCount(questionField, questionCount);
@@ -89,7 +106,7 @@ form.addEventListener("submit", (event) => {
 
   console.log("Form submitted!"); // testing if successful
 
-  // read data from form
+  // read data from form in JS
 
   const questionText = questionField.value;
   const option1Text = option1Field.value;
@@ -99,7 +116,7 @@ form.addEventListener("submit", (event) => {
 
   // which answer is the correct one?
   const correctAnswer = document.querySelector(
-    'input[name="correct-answer"]:checked'
+    'input[name="correct-answer"]:checked' //checked = pseudo-selector only finds the checked radio-button
   ).value;
 
   console.log("Question:", questionText); //test if it works
@@ -141,7 +158,9 @@ form.addEventListener("submit", (event) => {
   radio1.value = "1";
 
   label1.appendChild(radio1);
-  label1.appendChild(document.createTextNode(option1Text));
+  label1.appendChild(
+    document.createTextNode(option1Text)
+  ); /* if TextContent is used, I would overwrite the radio button, using TextNode lets the text be shown beside the radio button */
   fieldset.appendChild(label1);
 
   // option 2
@@ -176,13 +195,14 @@ form.addEventListener("submit", (event) => {
   showAnswerButton.textContent = "Show Answer";
 
   // create tag
-  const tagList = document.createElement("ul");
+  const tagList = document.createElement("ul"); //create unordered list = container for my tags
   tagList.className = "quiz__card-tags";
 
+  /* if case because only if user types sth in = true, if nothing then just empty */
   if (tagText) {
-    const tagItem = document.createElement("li");
+    const tagItem = document.createElement("li"); //list item
     tagItem.className = "quiz__card-tag";
-    tagItem.textContent = tagText;
+    tagItem.textContent = tagText; //fill in Text
     tagList.appendChild(tagItem);
   }
 
@@ -192,9 +212,16 @@ form.addEventListener("submit", (event) => {
   newCard.appendChild(showAnswerButton);
   newCard.appendChild(tagList);
 
-  // show card on page after submitting
-  const formSection = document.querySelector(".form-section");
+  // show card on page after submit button and before footer
+  const formSection =
+    document.querySelector(
+      ".form-section"
+    ); /* search in html for the first element with the class .form-section, this is my form container, safe it in the variable formSection */
   formSection.insertAdjacentElement("afterend", newCard);
+
+  /* --- alternative but wrong in this case, because at end of the cody ---
+  document.body.appendChild(newCard);
+  */
 
   console.log("Card created!"); // test if successful
 
